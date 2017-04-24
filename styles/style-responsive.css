@@ -32,9 +32,10 @@ h3{
   line-height: 19pt;
 }
 
-/*start all link styline*/
+/*start all link styling*/
 
 a {
+  line-height: 18pt;
   font-weight: 400;
   color: #000;
   text-decoration:underline;
@@ -75,6 +76,7 @@ a.about-link:visited {
 }
 
 a.home {
+  line-height: auto;
   font-family: font-family: Alice, serif;
   color: #000;
   text-decoration: none;
@@ -110,12 +112,25 @@ a.home {
 }
 .title p {
   padding: 0px 15px;
-  max-width: 500px;
+  width: 100%;
 }
+
+.filters{
+  padding: 15px 0px 15px 15px;
+  box-sizing: border-box;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  visibility: hidden;
+  display: none;
+}
+
 .gallery {
   width:100%;
   padding: 15px;
+  position: relative;
 }
+
 .nav {
   background-color: #000;
   color: #fff;
@@ -143,6 +158,7 @@ a.home {
   box-sizing: border-box;
   padding: 0px 0px 15px 0px;
 }
+
 .thumbnail {
   display: flex;
   flex-direction:row;
@@ -152,6 +168,8 @@ a.home {
   width: 100%;
   border-bottom: 1px dotted #B0B0B0;
   margin-bottom: 15px;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 .thumbnail img {
   box-sizing: border-box;
@@ -159,21 +177,12 @@ a.home {
   max-width: 100%;
   /*min-width:300px;*/
 }
-/*.ratiotest{
-  width:100%;
-  height: auto;
-  flex-shrink: 0;
-}*/
+
 .thumbnail p {
   width: 100%;
   margin:0;
   min-width:200px;
   padding-bottom:15px;
-}
-
-.filters{
-  display: none;
-  visibility: hidden;
 }
 
 .footer {
@@ -192,6 +201,30 @@ a.home {
   margin:0;
 }
 
+/*for MITES40 slider*/
+.ratiotest{
+  position:relative;
+  max-width:100%;
+  width:100%;
+  height: 600px;
+}
+.ratiotest iframe {
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  box-sizing: border-box;
+}
+/*for MITES40 slider*/
+
+.special {
+  /*filter:blur(4px);*/
+  opacity:0.15;
+  transition: opacity 0.5s;
+}
+
 @media only screen and (min-width: 768px) {
     /* For tablets: */
     .nav{
@@ -201,11 +234,6 @@ a.home {
       margin: 0px;
       font-size: 11pt;
       line-height: 14pt;
-    }
-
-    .filters{
-      display: block;
-      visibility: visible;
     }
     .title {
       width:25%;
@@ -245,6 +273,12 @@ a.home {
       display: none;
       visibility: hidden;
     }
+    .filters{
+      padding: 15px 0px 15px 0px;
+      visibility: visible;
+      display: block;
+    }
+
 }
 
 @media only screen and (min-width: 1100px) {
@@ -282,5 +316,18 @@ a.home {
     .title{
       padding: 30px;
     }
+    .filters{
+      padding: 22px 0px 30px 0px;
+    }
+
+    /*for MITES40 slider*/
+    .ratiotest{
+      width:80%;
+      max-width:950;
+      height: 600px;
+      padding-bottom:30px;
+    }
+    /*for MITES40 slider*/
+
 
 }
